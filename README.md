@@ -1,8 +1,8 @@
 
-# Next Blog Starter
+# Profile CMS  backend
 
-A simple **Blog Application Starter Pack** built with **TypeScript, Express.js**.  
-This project is designed for the **Next Level Web Development Bootcamp** to help learners practice Prisma hands-on by building a blog platform.
+A simple **Personal profile backend** built with **TypeScript, Express.js postgresql, prisma**.  
+
 
 ---
 
@@ -10,7 +10,8 @@ This project is designed for the **Next Level Web Development Bootcamp** to help
 - TypeScript + Express.js setup
 - Modular project structure
 - Environment configuration with `dotenv`
-- Ready to extend with blog modules (Posts, Users, etc.)
+- Ready to extend with blog modules (Posts,Projects Users.)
+- JWT token based authentication and authorization
 
 ---
 
@@ -19,8 +20,8 @@ This project is designed for the **Next Level Web Development Bootcamp** to help
 Clone the repository:
 
 ```bash
-git clone https://github.com/Apollo-Level2-Web-Dev/next-blog-starter.git
-cd next-blog-starter
+git clone https://github.com/masudsw/Profile-cms-backend.git
+cd profile-cms-backend
 ```
 
 Install dependencies:
