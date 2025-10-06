@@ -61,7 +61,7 @@ pnpm dev
 ## Folder Structure
 
 ```
-Prisma-Blog/
+portfolio-cms-backend/
 │── node_modules/          # Dependencies
 │── src/
 │   ├── app.ts             # Express app configuration
@@ -91,12 +91,4 @@ pnpm start
 
 ---
 
-## Learning Objective
 
-This starter pack is part of the **Next Level Web Development Bootcamp** curriculum.
-By using this project, students will learn how to:
-
-* Connect a Node.js app with Prisma ORM
-* Build modular APIs
-* Manage environment variables
-* Structure scalable backend projects"# Profile-cms-backend" 
