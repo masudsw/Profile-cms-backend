@@ -14,8 +14,6 @@ const app = express();
 app.use(cors()); // Enables Cross-Origin Resource Sharing
 app.use(compression()); // Compresses response bodies for faster delivery
 app.use(cookiParser())
-app.use(express.json()); // Parse incoming JSON requests
-
 
 app.use(
   cors({
@@ -23,6 +21,7 @@ app.use(
     credentials: true,
   })
 );
+app.use(express.json()); // Parse incoming JSON requests
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/post", postRouter);
 app.use("/api/v1/auth", authRouter);
