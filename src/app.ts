@@ -11,9 +11,8 @@ import { postRouter } from "./modules/post/post.router";
 const app = express();
 
 // Middleware
-app.use(cors()); // Enables Cross-Origin Resource Sharing
 app.use(compression()); // Compresses response bodies for faster delivery
-app.use(cookiParser())
+
 
 app.use(
   cors({
@@ -22,6 +21,7 @@ app.use(
   })
 );
 app.use(express.json()); // Parse incoming JSON requests
+app.use(cookiParser())
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/post", postRouter);
 app.use("/api/v1/auth", authRouter);
