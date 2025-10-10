@@ -6,7 +6,7 @@ const loginWithEmailAndPassword = async (req: Request, res: Response) => {
         const result = await AuthService.loginWithEmailAndPassword(req.body)
         res.cookie("accessToken", result.accessToken, {
             httpOnly: true,
-            secure: false
+            secure: true
         })
         res.status(200).json(result);
 
