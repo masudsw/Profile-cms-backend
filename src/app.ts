@@ -10,8 +10,8 @@ import { postRouter } from "./modules/post/post.router";
 
 const app = express();
 
-// Middleware
-app.use(compression()); // Compresses response bodies for faster delivery
+
+app.use(compression()); 
 
 
 app.use(
@@ -20,18 +20,18 @@ app.use(
     credentials: true,
   })
 );
-app.use(express.json()); // Parse incoming JSON requests
+app.use(express.json()); 
 app.use(cookiParser())
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/post", postRouter);
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/project", ProjectRouter)
-// Default route for testing
+
 app.get("/", (_req, res) => {
   res.send("API is running");
 });
 
-// 404 Handler
+
 app.use((req, res, next) => {
   res.status(404).json({
     success: false,
