@@ -6,7 +6,11 @@ const loginWithEmailAndPassword = async (req: Request, res: Response) => {
         const result = await AuthService.loginWithEmailAndPassword(req.body)
         res.cookie("accessToken", result.accessToken, {
             httpOnly: true,
-            secure: true
+             maxAge: 7 * 24 * 60 * 60 * 1000,
+            secure: process.env.NODE_ENV === "production", // only secure in prod
+            sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+            path: "/",  
+
         })
         res.status(200).json(result);
 

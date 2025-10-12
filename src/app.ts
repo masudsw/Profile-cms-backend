@@ -16,7 +16,7 @@ app.use(compression());
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin:"https://portfolio-frontend-virid-one.vercel.app",
     credentials: true,
   })
 );
