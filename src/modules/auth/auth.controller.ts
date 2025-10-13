@@ -5,11 +5,12 @@ const loginWithEmailAndPassword = async (req: Request, res: Response) => {
     try {
         const result = await AuthService.loginWithEmailAndPassword(req.body)
         res.cookie("accessToken", result.accessToken, {
-            httpOnly: true,
-             maxAge: 7 * 24 * 60 * 60 * 1000,
-            secure: process.env.NODE_ENV === "production", // only secure in prod
-            sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
-            path: "/",  
+            
+            httpOnly: true, 
+            secure: true,   
+            sameSite: 'none', 
+            maxAge: 3600000, 
+            path: '/',
 
         })
         res.status(200).json(result);
@@ -32,7 +33,7 @@ const logout = async (req: Request, res: Response) => {
     res.clearCookie("accessToken", {
         httpOnly: true,
         secure: false,
-        sameSite: "lax",
+        sameSite: "none",
     })
     res.status(200).json({
         success: true,

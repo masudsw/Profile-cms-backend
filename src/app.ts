@@ -16,7 +16,7 @@ app.use(compression());
 
 app.use(
   cors({
-    origin:"https://portfolio-frontend-virid-one.vercel.app",
+    origin:process.env.FRONTEND_URL,
     credentials: true,
   })
 );
